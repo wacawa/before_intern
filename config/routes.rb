@@ -5,10 +5,11 @@ Rails.application.routes.draw do
 
   devise_for :users
   devise_scope :user do
+    root 'devise/sessions#new'
     get '/users', to: 'devise/registrations#new'
   end
   
-  # root 'static_pages#top'
-  get "/users/dash_boards", to: "users#show", as: :root
+  # root "static_pages#top"
+  get "/users/dash_boards", to: "users#show", as: "user_root"
 
 end
