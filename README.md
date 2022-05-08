@@ -23,3 +23,4 @@ Things you may want to cover:
 
 * ...
 # before_intern
+# push可能か調べるために追記
