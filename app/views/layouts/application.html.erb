@@ -11,10 +11,12 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <div class="container-fluid"><%# py-4 mw-md %>
-      <%= yield %>
+    <div class="container">
+      <div class="row justify-content-md-center">
+        <p class="notice"><%= notice %></p>
+        <p class="alert"><%= alert %></p>
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
