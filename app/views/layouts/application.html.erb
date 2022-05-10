@@ -6,15 +6,18 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag "custom", media: "all" %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row justify-content-md-center">
-        <p class="notice"><%= notice %></p>
-        <p class="alert"><%= alert %></p>
+        <div class="flash text-center">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><% alert %></p>
+        </div>
         <%= yield %>
       </div>
     </div>
