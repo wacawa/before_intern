@@ -3,10 +3,6 @@ Rails.application.routes.draw do
   
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
-  resources :users do
-    resources :articles
-  end
-  
   devise_for :users
   devise_scope :user do
     root 'devise/sessions#new'
@@ -16,4 +12,8 @@ Rails.application.routes.draw do
   # root "static_pages#top"
   get "/users/dash_boards", to: "users#show", as: "user_root"
 
+  namespace :users do
+    resources :articles
+  end
+  
 end
