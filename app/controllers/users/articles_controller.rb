@@ -1,5 +1,8 @@
-class Users::ArticleController < ApplicationController
+class Users::ArticlesController < ApplicationController
+  before_action :authenticate_user!
+
   def index
+    @articles = Article.where()
   end
 
   def show
@@ -19,4 +22,5 @@ class Users::ArticleController < ApplicationController
 
   def destroy
   end
+
 end
