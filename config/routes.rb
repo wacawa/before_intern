@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   
   mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
 
+  resources :users do
+    resources :articles
+  end
+  
   devise_for :users
   devise_scope :user do
     root 'devise/sessions#new'
