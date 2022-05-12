@@ -1,28 +1,33 @@
 <h1 class="text-center">記事一覧</h1>
 
 <div class="col-10">
-  <div class="col-12 py-2">
-    <%= link_to "記事新規作成", new_users_article_path, class: "btn btn-primary col-6 offset-3" %> 
+  <div class="text-center py-3">
+    <%= link_to "記事新規作成", new_users_article_path, class: "btn btn-primary col-6" %> 
   </div>
-  <div class="col-10">
-    <table class="table">
+  <div class="col-10 offset-1">
+    <table class="table text-center align-middle">
       <thead>
         <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
-          <th></th>
+          <th><%= t(".detail") %></th>
+          <th><%= Article.human_attribute_name(:title) %></th>
+          <th><%= Article.human_attribute_name(:content) %></th>
+          <th><%= Article.human_attribute_name(:image) %></th>
+          <th><%= t(".edit_and_destroy") %></th>
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-          <td></td>
-        </tr>
+        <% @articles.each do |a| %>
+          <tr>
+            <td><%= link_to t(".detail"), users_article_path(a.id), class: "btn btn-primary" %></td>
+            <td><%= a.title %></td>
+            <td><%= a.content %></td>
+            <td><%= a.image %></td>
+            <td>
+              <%= link_to t(".edit"), edit_users_article_path(a.id), class: "btn btn-success" %>
+              <%= link_to t(".destroy"), users_article_path(a.id), method: :delete, class: "btn btn-danger ml-1" %>
+            </td>
+          </tr>
+        <% end %>
       </tbody>
     </table>
   </div>
