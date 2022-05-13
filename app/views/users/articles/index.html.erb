@@ -21,7 +21,7 @@
             <td><%= link_to t(".detail"), users_article_path(a.id), class: "btn btn-primary" %></td>
             <td><%= a.title %></td>
             <td><%= a.content %></td>
-            <td><%= a.image %></td>
+            <td><%= image_tag a.image.url if a.image? %></td>
             <td>
               <%= link_to t(".edit"), edit_users_article_path(a.id), class: "btn btn-success" %>
               <%= link_to t(".destroy"), users_article_path(a.id), method: :delete, class: "btn btn-danger ml-1" %>

@@ -14,7 +14,6 @@ class Users::ArticlesController < ApplicationController
   end
 
   def create
-    debugger
     @article = Article.new(article_params)
     if @article.save
       flash[:notice] = "記事を作成しました。"

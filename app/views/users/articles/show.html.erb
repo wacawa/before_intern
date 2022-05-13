@@ -1,7 +1,7 @@
 <h1 class="text-center">記事詳細</h1>
 
 <div class="col-10">
-  <table class="table text-center">
+  <table class="table text-center align-middle">
     <thead>
       <tr>
         <th><%= Article.human_attribute_name(:title)%></th>
@@ -13,7 +13,7 @@
       <tr>
         <td><%= @article.title %></td>
         <td><%= @article.content %></td>
-        <td><%= @article.image %></td>
+        <td><%= image_tag @article.image.url if @article.image? %></td>
       </tr>
     </tbody>
   </table>
