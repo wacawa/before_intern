@@ -3,18 +3,18 @@ class Users::ArticlesController < ApplicationController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.where(user_id: current_user.id)
+    @articles = current_user.articles.all
   end
 
   def show
   end
 
   def new
-    @article = Article.new
+    @article = current_user.articles.new
   end
 
   def create
-    @article = Article.new(article_params)
+    @article = current_user.articles.new(article_params)
     if @article.save
       flash[:notice] = "記事を作成しました。"
     else
@@ -44,7 +44,7 @@ class Users::ArticlesController < ApplicationController
   # before_action
     
   def set_article
-    @article = Article.find(params[:id])
+    @article = current_user.articles.find(params[:id])
   end
 
   private
