@@ -12,4 +12,8 @@ Rails.application.routes.draw do
   # root "static_pages#top"
   get "/users/dash_boards", to: "users#show", as: "user_root"
 
+  namespace :users do
+    resources :articles
+  end
+  
 end

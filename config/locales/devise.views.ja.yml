@@ -26,8 +26,13 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         name: 名前
+      article:
+        title: タイトル
+        content: 内容
+        image: 画像
     models:
       user: ユーザー
+      article: 記事
   devise:
     confirmations:
       confirmed: メールアドレスが確認できました。
@@ -146,3 +151,21 @@ ja:
       not_saved:
         one: エラーが発生したため %{resource} は保存されませんでした。
         other: "%{count} 件のエラーが発生したため %{resource} は保存されませんでした。"
+  users:
+    articles:
+      index:
+        detail: 詳細
+        btn_detail: 詳細表示
+        edit_and_destroy: 編集・削除
+        edit: 編集
+        destroy: 削除
+      show:
+        edit: 編集
+        destroy: 削除
+        btn_to_index: 記事一覧へ戻る
+      new:
+        btn_create: 新規作成
+        back: 戻る
+      edit:
+        btn_update: 更新する
+        back: 戻る
